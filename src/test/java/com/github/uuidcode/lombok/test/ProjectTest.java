@@ -1,23 +1,18 @@
 package com.github.uuidcode.lombok.test;
 
 import org.junit.Test;
-import org.slf4j.Logger;
 
 import com.github.uuidcode.util.CoreUtil;
 
-import static org.slf4j.LoggerFactory.getLogger;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class ProjectTest {
-    protected static Logger logger = getLogger(ProjectTest.class);
-
     @Test
     public void test() {
         Project project = new Project();
         project.setProjectId(100L);
-
-        if (logger.isDebugEnabled()) {
-            logger.debug(">>> build project: {}", CoreUtil.toJson(project));
-        }
+        this.debug(project);
     }
 
     @Test
@@ -25,9 +20,13 @@ public class ProjectTest {
         Project project = Project.builder()
             .projectId(100L)
             .build();
+        this.debug(project);
+    }
 
-        if (logger.isDebugEnabled()) {
-            logger.debug(">>> build project: {}", CoreUtil.toJson(project));
+    private void debug(Project project) {
+        if (log.isDebugEnabled()) {
+            log.debug(">>> build project: {}", CoreUtil.toJson(project));
+            log.debug(">>> build getProjectId: {}", CoreUtil.toJson(project.getProjectId()));
         }
     }
 }
