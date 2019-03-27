@@ -11,4 +11,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Project {
     private Long projectId;
+
+    public Long getProjectId() {
+        return 0L;
+    }
 }
