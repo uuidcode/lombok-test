@@ -1,8 +1,6 @@
-package com.github.uuidcode.lombok.test;
+package com.github.uuidcode.lombok.test.delegate;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class MachineTest {
     @Test

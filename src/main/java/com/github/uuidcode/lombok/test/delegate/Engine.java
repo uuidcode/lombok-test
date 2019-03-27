@@ -1,4 +1,4 @@
-package com.github.uuidcode.lombok.test;
+package com.github.uuidcode.lombok.test.delegate;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
